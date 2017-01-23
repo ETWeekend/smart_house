@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Smart House</title>
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="libs/select2/dist/css/select2.min.css">
+    <script src="js/libs.min.js"></script>
+	<script src="libs/select2/dist/js/select2.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left-side-bar">
+			<div class="nav-menu">
+				<ul>
+					<li class="nav-menu__item house active-tab">
+						<i class="fa fa-home fa-lg"></i>
+					</li>
+					<li class="nav-menu__item bedroom">
+						<i class="fa fa-bed fa-lg"></i>
+					</li>
+					<li class="nav-menu__item lighting">
+						<i class="fa fa-lightbulb-o fa-lg"></i>
+					</li>
+					<li class="nav-menu__item camera">
+						<i class="fa fa-video-camera fa-lg"></i>
+					</li>
+					<li class="nav-menu__item lock">
+						<i class="fa fa-unlock-alt fa-lg"></i>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="right-content">
+			<div class="head-title clearfix">
+                <div class="select-date-container fl-left">
+                    <select name="" id="select-date">
+                        <option value="">March 5, 2016</option>
+                        <option value="">March 5, 2016</option>
+                        <option value="">March 5, 2016</option>
+                    </select>
+                </div>
+                <div class="fl-right">
+                    <div class="user-container fl-right">
+                        <!--<img src="img/user.png" alt="User">-->
+                    </div>
+                    <div class="settings-container fl-right">
+                        <i class="fa fa-cog fa-lg fa-spin"></i>
+                    </div>
+                </div>
+			</div>
+			<div class="cards-wrap rw">
+                <div class="cl cl-4">
+                    <div class="wh-card wh-card-h3"></div>
+                </div>
+                <div class="cl cl-4">
+                    <div class="wh-card wh-card-h3"></div>
+                </div>
+                <div class="cl cl-4">
+                    <div class="wh-card wh-card-h3"></div>
+                </div>
+                <div class="cl cl-4">
+                    <div class="wh-card wh-card-h3"></div>
+                </div>
+                <div class="cl cl-8">
+                    <div class="wh-card wh-card-h3"></div>
+                </div>
+                <div class="cl cl-3">
+                    <div class="wh-card wh-card-h1"></div>
+                    <div class="wh-card wh-card-h1"></div>
+                </div>
+                <div class="cl cl-3">
+                    <div class="wh-card wh-card-h1"></div>
+                    <div class="wh-card wh-card-h1"></div>
+                </div>
+                <div class="cl cl-3">
+                    <div class="wh-card wh-card-h2"></div>
+                </div>
+                <div class="cl cl-3">
+                    <div class="wh-card wh-card-h2"></div>
+                </div>
+			</div>
+		</div>
+	</div>
+
+    <script type="text/javascript">
+        $(function() {
+            var selectInit = function(){
+                $("#select-date").select2();
+
+            };
+
+//            $(window).on('resize', function(){
+//                selectInit();
+//            });
+//            $(".js-example-basic-hide-search").select2({
+//                minimumResultsForSearch: Infinity
+//            });
+
+            $.fn.select2.defaults.set("theme", "select-date");
+//            $.fn.select2.defaults.set("theme", "classic");
+
+            selectInit();
+        });
+    </script>
+</body>
+</html>

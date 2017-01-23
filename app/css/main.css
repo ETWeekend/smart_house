@@ -1,0 +1,197 @@
+.rw {
+  margin: 0 -15px; }
+  .rw:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .rw .cl {
+    float: left;
+    padding: 15px;
+    margin: 0; }
+
+.cl-1 {
+  width: 8.33333%;
+  max-width: 8.33333%; }
+
+.cl-2 {
+  width: 16.66667%;
+  max-width: 16.66667%; }
+
+.cl-3 {
+  width: 25%;
+  max-width: 25%; }
+
+.cl-4 {
+  width: 33.33333%;
+  max-width: 33.33333%; }
+
+.cl-5 {
+  width: 41.66667%;
+  max-width: 41.66667%; }
+
+.cl-6 {
+  width: 50%;
+  max-width: 50%; }
+
+.cl-7 {
+  width: 58.33333%;
+  max-width: 58.33333%; }
+
+.cl-8 {
+  width: 66.66667%;
+  max-width: 66.66667%; }
+
+.cl-9 {
+  width: 75%;
+  max-width: 75%; }
+
+.cl-10 {
+  width: 83.33333%;
+  max-width: 83.33333%; }
+
+.cl-11 {
+  width: 91.66667%;
+  max-width: 91.66667%; }
+
+.cl-12 {
+  width: 100%;
+  max-width: 100%; }
+
+.cards-wrap .wh-card {
+  background-color: #fff;
+  -webkit-border-radius: 6px;
+          border-radius: 6px; }
+  .cards-wrap .wh-card-h3 {
+    height: 320px; }
+  .cards-wrap .wh-card-h2 {
+    height: 220px; }
+  .cards-wrap .wh-card-h1 {
+    height: 100px; }
+
+.cl-3 .wh-card-h1:first-child {
+  margin-bottom: 20px; }
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+html {
+  color: #4c4c4c; }
+
+body {
+  background-color: #d9d2c7;
+  margin: 0;
+  padding: 10px; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.fl-left {
+  float: left;
+  display: inline-block; }
+
+.fl-right {
+  float: right;
+  display: inline-block; }
+
+.wrapper {
+  display: block;
+  margin: 40px auto;
+  max-width: 1450px;
+  min-width: 320px;
+  min-height: 650px;
+  -webkit-border-radius: 6px;
+          border-radius: 6px;
+  background-color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5);
+          box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5); }
+
+.left-side-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 150px;
+  height: 100%;
+  background-color: #fff; }
+  .left-side-bar .nav-menu {
+    padding: 20px 0; }
+    .left-side-bar .nav-menu .nav-menu__item {
+      padding: 50px 0;
+      text-align: center;
+      width: 100%;
+      color: #d3d3d3;
+      cursor: pointer;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s; }
+      .left-side-bar .nav-menu .nav-menu__item:hover {
+        color: #d9d2c7; }
+      .left-side-bar .nav-menu .nav-menu__item.active-tab {
+        color: #4c4c4c;
+        position: relative; }
+        .left-side-bar .nav-menu .nav-menu__item.active-tab:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          top: 32px;
+          height: 50px;
+          width: 3px;
+          background-color: #4c4c4c; }
+
+.right-content {
+  padding: 45px 50px 45px 200px; }
+  .right-content .head-title {
+    height: 35px;
+    margin-bottom: 30px; }
+    .right-content .head-title .select-date-container {
+      width: 150px;
+      height: 35px;
+      -webkit-border-radius: 6px;
+              border-radius: 6px;
+      display: inline-block;
+      background-color: #fff; }
+    .right-content .head-title .settings-container {
+      display: inline-block;
+      background-color: #fff;
+      width: 50px;
+      height: 35px;
+      text-align: center;
+      -webkit-border-radius: 6px;
+              border-radius: 6px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      padding-top: 9px;
+      cursor: pointer;
+      margin-right: 25px; }
+      .right-content .head-title .settings-container i {
+        -webkit-animation-play-state: paused;
+                animation-play-state: paused; }
+      .right-content .head-title .settings-container:hover i {
+        -webkit-animation-play-state: running;
+                animation-play-state: running; }
+    .right-content .head-title .user-container {
+      display: inline-block;
+      background-color: #fff;
+      background-image: url(../img/user.png);
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      background-size: cover;
+      -webkit-border-radius: 50%;
+              border-radius: 50%;
+      height: 35px;
+      width: 35px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      overflow: hidden; }

@@ -1,0 +1,163 @@
+@import "_const.scss";
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	color: $standard-color;
+}
+body {
+	background-color: $bg-color;
+	margin: 0;
+	padding: 10px;
+}
+
+ul {
+	margin: 0;
+	padding:0;
+}
+li {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+.fl-left {
+	float: left;
+	display: inline-block;
+}
+.fl-right {
+	float: right;
+	display: inline-block;
+}
+
+.wrapper {
+	display: block;
+	margin: 40px auto;
+	max-width: 1450px;
+	min-width: 320px;
+	min-height: 650px;
+	border-radius: $default-br;
+	background-color: $wrap-bg-color;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0px 0px 10px 0px rgba(128, 128, 128, 0.5);
+}
+
+.left-side-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 150px;
+	height: 100%;
+	background-color: #fff;
+
+	.nav-menu {
+		padding: 20px 0;
+
+		.nav-menu__item {
+			padding: 50px 0;
+			text-align: center;
+			width: 100%;
+			color: #d3d3d3;
+			cursor: pointer;
+			transition: all 0.4s;
+
+			&:hover {
+				color: $bg-color;
+			}
+			
+			&.active-tab {
+				color: $standard-color;
+				position: relative;
+
+				&:after {
+					content: '';
+					position: absolute;
+					right: 0;
+					top: 32px;
+					height: 50px;
+					width: 3px;
+					background-color: $standard-color;
+				}
+			}
+		}
+	}
+}
+
+.right-content {
+	padding: 45px 50px 45px 200px;
+
+	.head-title {
+		height: 35px;
+		margin-bottom: 30px;
+
+		.select-date-container {
+			width: 150px;
+			height: 35px;
+			border-radius: $default-br;
+			display: inline-block;
+			background-color: #fff;
+		}
+
+		.settings-container {
+			display: inline-block;
+			background-color: #fff;
+			width: 50px;
+			height: 35px;
+			text-align: center;
+			border-radius: $default-br;
+			box-sizing: border-box;
+			padding-top: 9px;
+			cursor: pointer;
+			margin-right: 25px;
+
+			i {
+				animation-play-state: paused;
+			}
+
+			&:hover {
+
+				i {
+					animation-play-state: running;
+				}
+			}
+		}
+
+		.user-container {
+			display: inline-block;
+			background-color: #fff;
+			background-image: url(../img/user.png);
+			background-repeat: no-repeat;
+			background-position: 50% 50%;
+			background-size:cover;
+			border-radius: 50%;
+			height: 35px;
+			width: 35px;
+			box-sizing: border-box;
+			overflow: hidden;
+
+		}
+	}
+
+	.cards-wrap {
+		//display: flex;
+		//flex-flow: row wrap;
+		//justify-content: flex-start;
+		//align-items: center;
+
+		.wh-card {
+
+		}
+	}
+
+}
+
