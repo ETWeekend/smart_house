@@ -6,6 +6,7 @@
 
 html {
 	color: $standard-color;
+	font-family: sans-serif;
 }
 body {
 	background-color: $bg-color;
@@ -24,6 +25,7 @@ li {
 }
 
 .clearfix {
+
 	&:after {
 		content: "";
 		display: table;
@@ -67,12 +69,12 @@ li {
 			padding: 50px 0;
 			text-align: center;
 			width: 100%;
-			color: #d3d3d3;
+			color: $inactive-gray;
 			cursor: pointer;
 			transition: all 0.4s;
 
 			&:hover {
-				color: $bg-color;
+				color: $standard-color;
 			}
 			
 			&.active-tab {
@@ -144,7 +146,6 @@ li {
 			width: 35px;
 			box-sizing: border-box;
 			overflow: hidden;
-
 		}
 	}
 
@@ -155,9 +156,334 @@ li {
 		//align-items: center;
 
 		.wh-card {
+			position: relative;
+			background-color: #fff;
+			color: $text-gray;
+			border-radius: $default-br;
+
+			&_h3 {
+				height: 320px;
+				padding: 40px;
+			}
+
+			&_h2 {
+				height: 220px;
+			}
+
+			&_h1 {
+				height: 100px;
+				padding: 38px 20px;
+
+				&:first-child {
+					margin-bottom: 20px;
+				}
+			}
+
+			.cog-settings {
+				position: absolute;
+				color: $inactive-gray;
+				top: 0px;
+				right: 0px;
+				height: 50px;
+				width: 50px;
+				cursor: pointer;
+				transition: all 0.4s;
+
+				&:after {
+					content: '\f013';
+					top: 25px;
+					right: 25px;
+					font-family: FontAwesome;
+					position: absolute;
+					font-size: 15px;
+					transition: all 0.4s;
+				}
+
+				&:hover {
+
+					&:after {
+						color: $standard-color;
+						transform: rotate(90deg);
+					}
+				}
+			}
+
+			&_type-1 {
+
+				.title {
+					font-size: 20px;
+					transition: all 0.4s;
+				}
+
+				.basic-info {
+
+					&__count {
+						font-size:60px;
+						color: $standard-color;
+					}
+
+					&__unit {
+						font-size: 22px;
+					}
+				}
+
+				.schedule {
+					height: 100px;
+				}
+
+				.supp-info {
+
+					&__row {
+						font-size: 20px;
+						display: inline-block;
+						float: left;
+						margin-right: 45px;
+
+						&:last-child {
+							margin: 0;
+						}
+
+						.data {
+							color: $standard-color;
+						}
+						
+						.date {
+							
+						}
+					}
+				}
+
+
+				&.b-red {
+
+					.supp-info {
+
+						&__row {
+
+							.data {
+								color: $red;
+							}
+						}
+					}
+					
+					.cog-settings {
+						
+						&:hover {
+							
+							&:after {
+								color: $red;
+							}
+						}
+					}
+
+					&:hover {
+
+						.title {
+							color: $red;
+						}
+					}
+				}
+
+				&.b-green {
+
+					.supp-info {
+
+						&__row {
+
+							.data {
+								color: $green;
+							}
+						}
+					}
+
+					.cog-settings {
+
+						&:hover {
+
+							&:after {
+								color: $green;
+							}
+						}
+					}
+
+					&:hover {
+
+						.title {
+							color: $green;
+						}
+					}
+				}
+
+				&.b-blue {
+
+					.supp-info {
+
+						&__row {
+
+							.data {
+								color: $blue;
+							}
+						}
+					}
+
+					.cog-settings {
+
+						&:hover {
+
+							&:after {
+								color: $blue;
+							}
+						}
+					}
+
+					&:hover {
+
+						.title {
+							color: $blue;
+						}
+					}
+				}
+			}
+			
+			&_type-2 {
+				
+				.head-icon-cont {
+					text-align: center;
+					padding: 20px 0;
+
+					.head-icon {
+						display: inline-block;
+						height: 30px;
+						width:30px;
+
+						&:after {
+							content: '\f2c9';
+							font-family: FontAwesome;
+							font-size: 26px;
+							transition: all 0.4s;
+						}
+					}
+				}
+				
+				.basic-info {
+					text-align: center;
+					
+					.temp-count {
+						font-size: 85px;
+						color: $standard-color;
+						vertical-align: middle;
+					}
+					
+					.temp-unit {
+						text-transform: uppercase;
+						font-size: 40px;
+						vertical-align: middle;
+						position: relative;
+						padding-left: 13px;
+
+						&:before {
+							content: '\f10c';
+							font-family: FontAwesome;
+							font-weight: bold;
+							position: absolute;
+							top: 7px;
+							left: 0;
+							font-size: 14px;
+						}
+					}
+				}
+
+				&.b-yellow {
+
+					.cog-settings {
+
+						&:hover {
+
+							&:after {
+								color: $yellow;
+							}
+						}
+					}
+					
+					&:hover {
+						
+						.head-icon {
+
+							&:after {
+								color: $yellow;
+							}
+						}
+					}
+				}
+				
+			}
+
+			&_type-3 {
+
+			}
+
+			&_type-4 {
+
+				.type-4__side {
+					height: 100%;
+					width: 50%;
+					display: inline-block;
+
+					&_left {
+						float: left;
+						text-align: left;
+					}
+
+					&_right {
+						float: right;
+						text-align: right;
+					}
+				}
+				
+				&.type-lights {
+					
+				}
+
+				&.type-gas {
+
+				}
+
+				&.type-camera {
+
+				}
+
+				&.type-locks {
+
+				}
+			}
+
+			&_type-5 {
+
+			}
 
 		}
 	}
 
 }
+
+.custom-checkbox {
+	
+	input {
+		display: none;
+	}
+	
+	.toggle-checkbox-overlay {
+		display: inline-block;
+		border-radius: 20px;
+		width: 50px;
+		height: 24px;
+		background-color: $green;
+	}
+	
+	
+}
+
+
+
+@import "_media.scss";
 
