@@ -15,6 +15,7 @@
     <link rel="apple-touch-icon-precomposed" href="img/fav-icon/house-57-3318.png">
     <link rel="icon" href="img/fav-icon/house-32-3318.png" sizes="32x32">
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="css/libs.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
@@ -22,11 +23,13 @@
 
     <script src="js/libs.min.js"></script>
 	<script src="libs/select2/dist/js/select2.min.js"></script>
+    <!--<script scr="libs/smoothie/smoothie.js"></script>-->
+    <script src="http://smoothiecharts.org/smoothie.js"></script>
     <script src="js/main.js"></script>
 </head>
 <body>
 	<div class="wrapper">
-		<div class="left-side-bar">
+		<aside class="left-side-bar">
 			<div class="nav-menu">
 				<ul>
 					<li class="nav-menu__item house active-tab">
@@ -46,23 +49,28 @@
 					</li>
 				</ul>
 			</div>
-		</div>
+		</aside>
 
 		<div class="right-content">
 			<div class="head-title clearfix">
-                <div class="select-date-container fl-left">
+                <div class="select-date-container fl-left b-white">
                     <select name="" id="select-date">
                         <option value="">March 5, 2016</option>
                         <option value="">March 5, 2016</option>
                         <option value="">March 5, 2016</option>
                     </select>
                 </div>
+                <div class="sandwich b-white fl-right">
+                    <div class="sandwich__item sandwich__item_top"></div>
+                    <div class="sandwich__item sandwich__item_middle"></div>
+                    <div class="sandwich__item sandwich__item_bottom"></div>
+                </div>
                 <div class="fl-right">
-                    <div class="user-container fl-right">
+                    <div class="user-container fl-right b-white">
                         <!--<img src="img/user.png" alt="User">-->
                     </div>
-                    <div class="settings-container fl-right">
-                        <i class="fa fa-cog fa-lg fa-spin"></i>
+                    <div class="settings-container fl-right b-white">
+                        <span class="settings__cog settings__cog_spin"></span>
                     </div>
                 </div>
 			</div>
@@ -70,14 +78,16 @@
 			<div class="cards-wrap rw">
 
                 <div class="cl cl-4">
-                    <div class="wh-card wh-card_h3 wh-card_type-1 b-red">
+                    <div class="wh-card wh-card_h3 wh-card_type-1 b-white b-red">
                         <div class="cog-settings"></div>
                         <div class="title">power</div>
                         <div class="basic-info">
                             <span class="basic-info__count">2412</span>
                             <span class="basic-info__unit">kw</span>
                         </div>
-                        <div class="schedule"></div>
+                        <div class="schedule">
+                            <canvas class="chart-canvas" id="chart-power" width="210" height="70">
+                        </div>
                         <div class="supp-info">
                             <div class="supp-info__row">
                                 <div class="data">
@@ -98,14 +108,16 @@
                 </div>
 
                 <div class="cl cl-4">
-                    <div class="wh-card wh-card_h3 wh-card_type-1 b-green">
+                    <div class="wh-card wh-card_h3 wh-card_type-1 b-white b-green">
                         <div class="cog-settings"></div>
                         <div class="title">water</div>
                         <div class="basic-info">
                             <span class="basic-info__count">6.2</span>
                             <span class="basic-info__unit">m<sup>3</sup></span>
                         </div>
-                        <div class="schedule"></div>
+                        <div class="schedule">
+                            <canvas class="chart-canvas" id="chart-water" width="210" height="70">
+                        </div>
                         <div class="supp-info">
                             <div class="supp-info__row">
                                 <div class="data">
@@ -126,14 +138,16 @@
                 </div>
 
                 <div class="cl cl-4">
-                    <div class="wh-card wh-card_h3 wh-card_type-1 b-blue">
+                    <div class="wh-card wh-card_h3 wh-card_type-1 b-white b-blue">
                         <div class="cog-settings"></div>
                         <div class="title">gas</div>
                         <div class="basic-info">
                             <span class="basic-info__count">89</span>
                             <span class="basic-info__unit">MPG</span>
                         </div>
-                        <div class="schedule"></div>
+                        <div class="schedule">
+                            <canvas class="chart-canvas" id="chart-gas" width="210" height="70">
+                        </div>
                         <div class="supp-info">
                             <div class="supp-info__row">
                                 <div class="data">
@@ -154,7 +168,7 @@
                 </div>
 
                 <div class="cl cl-4">
-                    <div class="wh-card wh-card_h3 wh-card_type-2 b-yellow">
+                    <div class="wh-card wh-card_h3 wh-card_type-2 b-white b-yellow">
                         <div class="cog-settings"></div>
                         <div>
                             <div class="head-icon-cont">
@@ -169,37 +183,88 @@
                 </div>
 
                 <div class="cl cl-8">
-                    <div class="wh-card wh-card_h3 wh-card_type-3"></div>
+                    <div class="wh-card wh-card_h3 wh-card_type-3 b-white"></div>
                 </div>
 
                 <div class="cl cl-3">
-                    <div class="wh-card wh-card_h1 wh-card_type-4 type-lights clearfix">
+                    <div class="wh-card wh-card_h1 wh-card_type-4 b-white type-lights clearfix">
                         <div class="type-4__side type-4__side_left">
-                            <span class="head-icon"></span>
-                            <span>Lights</span>
+                            <span class="head-text">Lights</span>
                         </div>
                         <div class="type-4__side type-4__side_right">
-                            <label class="custom-checkbox">
-                                <input type="checkbox">
-                                <span class="toggle-checkbox-overlay"></span>
-                                <span class="toggle-checkbox-circle"></span>
+                            <label class="label-switch" for="switch-light">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="switch-light">
+                                    <span class="toggle-checkbox-overlay"></span>
+                                    <span class="head-icon"></span>
+                                </div>
                             </label>
                         </div>
                     </div>
-                    <div class="wh-card wh-card_h1 wh-card_type-4"></div>
+
+                    <div class="wh-card wh-card_h1 wh-card_type-4 b-white type-gas clearfix">
+                        <div class="type-4__side type-4__side_left">
+                            <span class="head-text">Gas</span>
+                        </div>
+                        <div class="type-4__side type-4__side_right">
+                            <label class="label-switch" for="switch-gas">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="switch-gas">
+                                    <span class="toggle-checkbox-overlay"></span>
+                                    <span class="head-icon"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="cl cl-3">
-                    <div class="wh-card wh-card_h1 wh-card_type-4"></div>
-                    <div class="wh-card wh-card_h1 wh-card_type-4"></div>
+                    <div class="wh-card wh-card_h1 wh-card_type-4 b-white type-camera clearfix">
+                        <div class="type-4__side type-4__side_left">
+                            <span class="head-text">Camera</span>
+                        </div>
+                        <div class="type-4__side type-4__side_right">
+                            <label class="label-switch" for="switch-camera">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="switch-camera">
+                                    <span class="toggle-checkbox-overlay"></span>
+                                    <span class="head-icon"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="wh-card wh-card_h1 wh-card_type-4 b-white type-locks clearfix">
+                        <div class="type-4__side type-4__side_left">
+                            <span class="head-text">locks</span>
+                        </div>
+                        <div class="type-4__side type-4__side_right">
+                            <label class="label-switch" for="switch-locks">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" id="switch-locks">
+                                    <span class="toggle-checkbox-overlay"></span>
+                                    <span class="head-icon"></span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="cl cl-3">
-                    <div class="wh-card wh-card_h2 wh-card_type-5"></div>
+                    <div class="wh-card wh-card_h2 wh-card_type-5 b-white">
+                        <a class="preview-image preview-image_picture image-popup-vertical-fit" href="https://s-media-cache-ak0.pinimg.com/originals/d9/3c/ec/d93cec2893e6cb0aca2b4c48563d4f48.jpg" title="Caption. Can be aligned to any side and contain any HTML.">
+                            <span class="preview-image__overlay"></span>
+                        </a>
+                        <span class="preview-image-overlay"></span>
+                    </div>
                 </div>
 
                 <div class="cl cl-3">
-                    <div class="wh-card wh-card_h2 wh-card_type-5"></div>
+                    <div class="wh-card wh-card_h2 wh-card_type-5 b-white">
+                        <a class="preview-image preview-image_video popup-youtube" href="https://www.youtube.com/watch?v=fHD71eiRCx8">
+                            <span class="preview-image__overlay"></span>
+                        </a>
+                    </div>
                 </div>
 			</div>
 		</div>

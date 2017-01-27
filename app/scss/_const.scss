@@ -26,11 +26,26 @@ $yellow: #fcbf5f;
   }
 }
 
+.b-white {
+  background-color: #fff;
+  border-radius: $default-br;
+  transition: all 1s;
+}
+
 $cols: 12;
 
 @for $i from 1 through $cols {
   .cl-#{$i} {
     width: (100% / $cols * $i);
     max-width: (100% / $cols * $i);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
   }
 }
